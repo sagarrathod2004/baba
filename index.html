@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Ambedkar Bhavan Rajkot</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0a2351;
+      --royal: #0d47a1;
+      --gold: #ffcc00;
+      --soft-white: #f8f9fa;
+      --glass: rgba(255, 255, 255, 0.9);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--soft-white);
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* GLASS NAVIGATION */
+    nav {
+      background: rgba(10, 35, 81, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    nav a:hover { color: var(--gold); }
+
+    /* HERO SECTION - ELEGANT & SPIRITUAL */
+    .hero {
+      background: linear-gradient(rgba(10, 35, 81, 0.8), rgba(10, 35, 81, 0.8)), 
+                  url('ambedkar.jpg') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+      border-bottom: 8px solid var(--gold);
+    }
+
+    .hero h1 {
+      font-family: 'Rozha One', serif;
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      margin: 0;
+      text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .hero h2 {
+      font-size: 1.5rem;
+      color: var(--gold);
+      margin-top: 10px;
+      font-weight: 300;
+    }
+
+    /* DYNAMIC TICKER */
+    .ticker-container {
+      background: var(--gold);
+      color: var(--navy);
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 12px 0;
+      font-weight: 700;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .ticker-text {
+      display: inline-block;
+      animation: marquee 20s linear infinite;
+      font-size: 1.2rem;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+
+    /* VISION SECTION */
+    .vision-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 80px 10%;
+    }
+
+    .vision-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: 0.4s;
+      position: relative;
+    }
+
+    .vision-card:hover { transform: translateY(-10px); }
+
+    .vision-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .card-content { padding: 25px; text-align: center; }
+
+    /* EVENT TILES */
+    .events-section { background: var(--navy); color: white; padding: 80px 5%; }
+    
+    .section-title {
+      text-align: center;
+      font-family: 'Rozha One', serif;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: var(--gold);
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .event-tile {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 15px;
+      transition: 0.3s;
+    }
+
+    .event-tile:hover { background: rgba(255,255,255,0.15); }
+
+    .event-tile img {
+      width: 100%;
+      height: 180px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    /* CONTACT & FLOATING ACTION */
+    .contact-wrapper {
+      padding: 80px 10%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .info-box {
+      background: white;
+      padding: 40px;
+      border-radius: 30px;
+      border-left: 10px solid var(--royal);
+    }
+
+    .btn-main {
+      display: inline-block;
+      padding: 15px 35px;
+      background: var(--royal);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.3s;
+      margin-top: 20px;
+    }
+
+    .btn-main:hover {
+      background: var(--gold);
+      color: var(--navy);
+      transform: scale(1.05);
+    }
+
+    .insta-link {
+      color: #E1306C;
+      text-decoration: none;
+      font-weight: 700;
+      display: block;
+      margin-top: 15px;
+    }
+
+    footer {
+      background: #051635;
+      color: white;
+      text-align: center;
+      padding: 40px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .contact-wrapper { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#vision">Vision</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Dr. Ambedkar Bhavan</h1>
+    <h2>Rajkot, Gujarat</h2>
+    <p style="max-width: 600px; font-size: 1.1rem; margin-top: 20px;">
+      "Life should be great rather than long." — A sanctuary for growth, equality, and community service.
+    </p>
+    <a href="#contact" class="btn-main" style="background: var(--gold); color: var(--navy);">Join Our Community</a>
+  </section>
+
+  <div class="ticker-container">
+    <div class="ticker-text">
+      || शिक्षित बनो, संगठित रहो, संघर्ष करो || Educate, Agitate, Organize || બાબા સાહેબ અમર રહો ||
+    </div>
+  </div>
+
+  <section id="vision" class="vision-grid">
+    <div class="vision-card">
+      <img src="buddha.jpg" alt="Peace">
+      <div class="card-content">
+        <h3>Spirit of Peace</h3>
+        <p>A meditative environment designed for focus, spiritual growth, and mental clarity.</p>
+      </div>
+    </div>
+    <div class="vision-card">
+      <img src="ambedkar.jpg" alt="Equality">
+      <div class="card-content">
+        <h3>Equality for All</h3>
+        <p>Inspired by the vision of Dr. B.R. Ambedkar, we provide a home for every student and professional.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="events" class="events-section">
+    <h2 class="section-title">Community & Celebrations</h2>
+    <div class="event-grid">
+      <div class="event-tile">
+        <img src="event1.jpg" alt="Celebration">
+        <h4>Birth Anniversary</h4>
+        <p>Grand celebrations of Babasaheb's legacy with the Rajkot community.</p>
+      </div>
+      <div class="event-tile">
+        <img src="event2.jpg" alt="April 14">
+        <h4>14th April</h4>
+        <p>A day of unity, education, and cultural pride.</p>
+      </div>
+      <div class="event-tile">
+        <img src="event3.jpg" alt="Facilities">
+        <h4>Free Stay & Food</h4>
+        <p>Special facilities provided for the upliftment of the community.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-wrapper">
+    <div class="info-box">
+      <h2 style="color: var(--navy);">Management</h2>
+      <p><strong>Owner:</strong> Ashok Sindhav</p>
+      <p><strong>Manager:</strong> Hasmukh Bhai</p>
+      <p style="font-size: 1.2rem; margin: 20px 0;">📞 +91 8000511066</p>
+      <a href="tel:8000511066" class="btn-main">Call For Inquiry</a>
+      <a href="https://www.instagram.com/dr.b.r.ambedkar_bhavan?igsh=NzU1Znd1bXFodWY1" target="_blank" class="insta-link">📸 Follow us on Instagram</a>
+    </div>
+    <div style="text-align: center;">
+      <h2 class="section-title" style="color: var(--navy); text-align: left;">Find Us</h2>
+      <p>Visit our peaceful campus in the heart of Rajkot.</p>
+      <a href="https://maps.app.goo.gl/VTnD4Fz2g4dKMwzt7" class="btn-main" style="background: #34a853;">📍 View on Google Maps</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Dr. Ambedkar Bhavan Rajkot</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">Designed for Equality & Excellence</p>
+  </footer>
+
+</body>
+</html>
